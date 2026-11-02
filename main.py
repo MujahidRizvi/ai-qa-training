@@ -1,5 +1,9 @@
 from playwright.sync_api import sync_playwright
-from toolshop_tests_week1 import test_browse_category, test_product_details
+from toolshop_tests_week1 import (
+    test_browse_category,
+    test_product_details,
+    test_add_to_cart,
+)
 
 
 def main():
@@ -20,6 +24,12 @@ def main():
             print("PASS: test_product_details")
         except Exception as error:
             print(f"FAIL: test_product_details - {error}")
+
+        try:
+            test_add_to_cart(page)
+            print("PASS: test_add_to_cart")
+        except Exception as error:
+            print(f"FAIL: test_add_to_cart - {error}")
 
         finally:
             browser.close()
