@@ -21,3 +21,32 @@ def test_browse_category(page):
 
                 print(testData["ASSERT_TEXT"])
 
+
+def test_product_details(page):
+
+    page.goto(testData["BASE_URL"])
+    page.click(testData["CATEGORY_MENU"])
+    page.click(testData["HAND_TOOLS"])
+    expect(page).to_have_title(testData["TITLE_TEXT"])
+    print(testData["SUCCESS_TEXT_1"])
+    product_count = page.locator(testData["PRODUCT_NAME"]).count()
+    if product_count > 0:
+        print(testData["SUCCESS_TEXT_2"])
+        product_names = page.locator(testData["PRODUCT_NAME"])
+        for name in product_names.all_inner_texts():
+            product_name = name.strip()
+
+            if not product_name:
+                print(testData["FAILURE_MSG_2"])
+
+                print(testData["ASSERT_TEXT"])
+        for name in product_names.all_inner_texts():
+            product_name1 = name.strip()
+            if name == testData["EXPECTED_PROD_TITLE"]:
+                page.get_by_text(product_name1).click()
+                expect(page.locator(testData["PDP_HEADING"])).to_have_text(
+                    testData["EXPECTED_PROD_TITLE"]
+                )
+                expect(page.locator(testData["UNIT_PRICE"])).to_be_visible()
+                expect(page.locator(testData["ADD_TO_CART"])).to_be_visible()
+                print(testData["SUCCESS_TEXT_3"])
