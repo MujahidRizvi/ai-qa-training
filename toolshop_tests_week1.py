@@ -21,21 +21,3 @@ def test_browse_category(page):
 
                 print(testData["ASSERT_TEXT"])
 
-
-def main():
-
-    with sync_playwright() as p:
-
-        browser = p.chromium.launch(headless=False, slow_mo=1000)
-        page = browser.new_page()
-        try:
-            test_browse_category(page)
-            print("PASS: test_browse_category")
-        except Exception as error:
-            print(f"FAIL: test_browse_category - {error}")
-
-        browser.close()
-
-
-if __name__ == "__main__":
-    main()
