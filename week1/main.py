@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from toolshop_tests_week1 import (
+from toolshop_tests_week2 import (
     test_browse_category,
     test_product_details,
     test_add_to_cart,
