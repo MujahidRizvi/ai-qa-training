@@ -1,0 +1,15 @@
+testData = {
+    "BASE_URL": "https://practicesoftwaretesting.com",
+    "API_URL": "https://api.practicesoftwaretesting.com",
+    "API_SEARCH_URL": "https://api.practicesoftwaretesting.com/categories/search?q=pliers",
+    "QTY": '[data-test="quantity"]',
+    "PROD_NAME": '[data-test="product-name"]',
+    "EXPECTED_ID": "01M7MWY1PT39AG52NYKDJ1ZRZV",
+    "EXPECTED_NAME": "Pliers",
+    "EXPECTED_SLUG": "pliers",
+    "EXPECTED_PARENT_ID": "01M7MWY1P70CFPCXCFXJNN03JJ",
+    "PRODUCT": '[data-test="product-01M7N0BWFM3G6GXX900TC3ZF6Y"]',
+    "PROD_TITLE": ".col-md-9 .container a:nth-child(1)",
+    "IMG_NAME": 'img[alt="Combination Pliers"]',
+    "IMG_VISIBLE_MSG": "Combination Pliers image is visible!",
+}
